@@ -2,7 +2,7 @@
 // keep the servo in neutral position
 module top(
 input clk,
-output led);
+output servo);
 
 //create a simple counter
 reg [19:0] counter=0;
@@ -15,7 +15,7 @@ end
 
 //11200(1ms)->left , 40350(1.5ms)->neutral , 69500(2ms)->right
 begin
-assign led = (counter<40350) ? 1:0;  //assign led to 1 only if counter less than 20
+  assign servo = (counter<40350) ? 1:0;  //assign servo to 1 only if counter less than 40350
 end
 
 endmodule
